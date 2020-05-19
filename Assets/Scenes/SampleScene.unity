@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 6936593}
   - component: {fileID: 6936592}
   m_Layer: 0
-  m_Name: FlowGraphStarter
+  m_Name: MainFlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

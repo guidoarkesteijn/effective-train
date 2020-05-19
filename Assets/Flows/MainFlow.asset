@@ -20,7 +20,7 @@ MonoBehaviour:
     values:
     - _fieldName: Out
       _node: {fileID: -8935260057924302219}
-      _typeQualifiedName: Action, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: ActionConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: actions
@@ -30,7 +30,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  prefabs: []
+  prefabs:
+  - {fileID: 4200082651174860204, guid: 37874299cde202843991ac1d151ec21a, type: 3}
+  - {fileID: 8251086082483155721, guid: 2b32d26bc0bea0040a6976446ff60bb0, type: 3}
 --- !u!114 &-8287645012792382971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,7 +46,7 @@ MonoBehaviour:
   m_Name: Input Key Code Rule
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 120, y: -56}
+  position: {x: 120, y: -136}
   ports:
     keys:
     - In
@@ -52,7 +54,7 @@ MonoBehaviour:
     values:
     - _fieldName: In
       _node: {fileID: -8287645012792382971}
-      _typeQualifiedName: Rule, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: RuleConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: rules
@@ -64,9 +66,12 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: Out
       _node: {fileID: -8287645012792382971}
-      _typeQualifiedName: Empty, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: FlowConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: In
+        node: {fileID: 2166185080500161979}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -94,7 +99,7 @@ MonoBehaviour:
     values:
     - _fieldName: In
       _node: {fileID: -5407750396322613742}
-      _typeQualifiedName: FlowNode+Empty, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: FlowConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections: []
       _direction: 0
@@ -103,7 +108,7 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: rules
       _node: {fileID: -5407750396322613742}
-      _typeQualifiedName: Rule, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: RuleConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: In
@@ -115,7 +120,7 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: actions
       _node: {fileID: -5407750396322613742}
-      _typeQualifiedName: Action, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      _typeQualifiedName: ActionConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: Out
@@ -142,3 +147,92 @@ MonoBehaviour:
   - {fileID: -5407750396322613742}
   - {fileID: -8935260057924302219}
   - {fileID: -8287645012792382971}
+  - {fileID: 2166185080500161979}
+  - {fileID: 341050848276946486}
+--- !u!114 &341050848276946486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74331052c20a9574d84183ae2d2ff254, type: 3}
+  m_Name: Spawn Prefabs Action
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 184, y: 24}
+  ports:
+    keys:
+    - Out
+    values:
+    - _fieldName: Out
+      _node: {fileID: 341050848276946486}
+      _typeQualifiedName: ActionConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: actions
+        node: {fileID: 2166185080500161979}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  prefabs:
+  - {fileID: 4200082651174860204, guid: 37874299cde202843991ac1d151ec21a, type: 3}
+  - {fileID: 8251086082483155721, guid: 2b32d26bc0bea0040a6976446ff60bb0, type: 3}
+--- !u!114 &2166185080500161979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178ed9c59e82b064bb807c77c3664b15, type: 3}
+  m_Name: Flow
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 440, y: -136}
+  ports:
+    keys:
+    - In
+    - actions
+    - rules
+    values:
+    - _fieldName: In
+      _node: {fileID: 2166185080500161979}
+      _typeQualifiedName: FlowConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: -8287645012792382971}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: actions
+      _node: {fileID: 2166185080500161979}
+      _typeQualifiedName: ActionConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: Out
+        node: {fileID: 341050848276946486}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: rules
+      _node: {fileID: 2166185080500161979}
+      _typeQualifiedName: RuleConnection, StateMachine.Core, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+  isStartNode: 0
