@@ -125,7 +125,10 @@ MonoBehaviour:
       _node: {fileID: -7941224123318151096}
       _typeQualifiedName: StateMachine.Core.Connections.FlowConnection, StateMachine.Core,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: In
+        node: {fileID: 2166185080500161979}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -241,7 +244,7 @@ MonoBehaviour:
   m_Name: Multi Rule
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 200, y: -664}
+  position: {x: 136, y: -424}
   ports:
     keys:
     - rules
@@ -297,7 +300,7 @@ MonoBehaviour:
   m_Name: Input Key Code Rule
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: -632}
+  position: {x: -232, y: -392}
   ports:
     keys:
     - In
@@ -393,7 +396,7 @@ MonoBehaviour:
   m_Name: Sub Flow
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 472, y: -632}
+  position: {x: 408, y: -392}
   ports:
     keys:
     - In
@@ -467,7 +470,10 @@ MonoBehaviour:
       _node: {fileID: 2166185080500161979}
       _typeQualifiedName: StateMachine.Core.Connections.FlowConnection, StateMachine.Core,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: Out
+        node: {fileID: -7941224123318151096}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
