@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.github.guidoarkesteijn.statemachine": "file:../LocalPackages/StateMachine",
     "com.github.siccity.xnode": "https://github.com/siccity/xNode.git",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
