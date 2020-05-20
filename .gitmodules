@@ -1,0 +1,3 @@
+[submodule "LocalPackages/StateMachine"]
+	path = LocalPackages/StateMachine
+	url = git@github.com:guidoarkesteijn/effective-train-package.git
